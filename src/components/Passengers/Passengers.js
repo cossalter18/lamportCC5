@@ -34,7 +34,7 @@ class Passengers extends Component {
         <button onClick={this.handleClick}>Add Passenger</button>
 
         <ul>PASSENGER LIST: </ul>
-        
+      
       </div>
     )
   }
