@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import SpeedControl from '../SpeedControl/SpeedControl';
 import Passengers from '../Passengers/Passengers';
 import Dashboard from '../Dashboard/Dashboard';
+import { connect } from 'react-redux';
 
 
 class App extends Component {
@@ -30,8 +31,10 @@ class App extends Component {
 
             <div className="content-container">
               <Route exact path="/" component={SpeedControl} />
-              <Route path="/passengers" component={Passengers} />
-              <Route path="/dashboard" component={Dashboard} />
+              {/* <Route path="/passengers" component={Passengers} />
+              <Route path="/dashboard" component={Dashboard} /> */}
+            <Route path="/passengers" render={(props) => <Passengers {...props} dispatch={this.props.dispatch} reduxState={this.props.reduxState} />} />
+            <Route path="/dashboard" render={(props) => <Dashboard {...props} dispatch={this.props.dispatch} />} />
             </div>
 
           </div>
@@ -40,4 +43,6 @@ class App extends Component {
   }
 }
 
-export default App;
+const reduxStateToProps = (reduxState) => ({reduxState})
+
+export default connect(reduxStateToProps)(App);

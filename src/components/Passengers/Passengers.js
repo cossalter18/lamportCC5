@@ -5,25 +5,34 @@ import React, { Component } from 'react';
 
 class Passengers extends Component {
 
-  handleClick=()=>{
+
+
+  handleClick = (event) => {
     console.log('in handleClick PASSENGERS');
-   
+    this.props.dispatch({
+      type: 'newPassenger',
+      payload: this.state
+    })
+
   }
 
-  handleChange=(event)=>{
+  handleChange = (event) => {
     console.log(event.target.value);
-    
+    this.setState({
+      [event.target.name]: event.target.value
+    })
   }
+
   render() {
     return (
       <div>
         <h2>Passengers</h2>
 
-        <input type="text" name="name" placeholder="Enter Name" onChange={ ( event )=>this.handleChange( event, 'name') }></input>
+        <input type="text" name="name" placeholder="Enter Name" onChange={(event) => this.handleChange(event, 'name')}></input>
         <button onClick={this.handleClick}>Add Passenger</button>
 
-        <ul>PASSENGER LIST: GOES HERE</ul>
-      
+        <ul>PASSENGER LIST: </ul>
+        {this.props.passenger.map}
       </div>
     )
   }
