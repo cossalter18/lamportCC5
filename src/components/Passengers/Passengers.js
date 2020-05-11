@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 // INPUT SHOULD COLLECT INFO, BUTTON SHOULD ADD THEM TO THE LIST
 
 class Passengers extends Component {
+  
+ 
 
 
 
@@ -32,7 +34,7 @@ class Passengers extends Component {
         <button onClick={this.handleClick}>Add Passenger</button>
 
         <ul>PASSENGER LIST: </ul>
-        {this.props.passenger.map}
+        
       </div>
     )
   }

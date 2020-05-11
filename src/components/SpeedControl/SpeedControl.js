@@ -38,6 +38,7 @@ class SpeedControl extends Component {
 
         <button onClick={this.increaseSpeed} name="increase">Increase Speed</button>
         <p>SPEED: {this.state.speed}</p>
+        
         <button onClick={this.decreaseSpeed} name="decrease">Decrease Speed</button>
        
       </div>

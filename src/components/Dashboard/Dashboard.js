@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import SpeedControl from '../SpeedControl/SpeedControl'
 
 // THIS COMPONENT IS OUR STATUS PAGE
 // YOU SHOULD DISPLAY THE CURRENT SPEED FROM SECTION ONE
@@ -10,7 +11,7 @@ class Dashboard extends Component {
       <div>
         <h2>Dashboard</h2>
         
-        <p>SPEED: </p>
+        <p>SPEED: {this.props.speed}</p>
         <p>PASSENGER COUNT: GOES HERE</p>
       </div>
     )
